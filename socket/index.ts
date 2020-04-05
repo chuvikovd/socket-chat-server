@@ -68,7 +68,7 @@ class WebSocketServer {
     } else {
       logger.log('info', `[WS] Close connection (user exited): ${ws.username}`)
 
-      type = 'userTimedOut'
+      type = 'userDisconnected'
     }
 
     this.broadcast(

@@ -22,7 +22,9 @@ server.listen(process.env.PORT, () => {
   logger.log('info', `[Server] Started at http://localhost:${process.env.PORT}`)
 })
 
-const wss = new WebSocketServer(server)
+const wss = new WebSocketServer(server, {
+  timeout: Number(process.env.TIMEOUT),
+})
 
 const shutdown = (signal: string) => {
   logger.log('info', `[Server] ${signal} received, begin graceful shutdown`)
