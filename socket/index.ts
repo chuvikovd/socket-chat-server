@@ -85,7 +85,7 @@ class WebSocketServer {
   closeAll() {
     logger.log('info', `[WS] Close all existing connections`)
 
-    this.wss.clients.forEach((client) => client.close(1001))
+    this.wss.clients.forEach((client) => client.close(1001, 'shutdown'))
   }
 }
 
